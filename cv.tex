@@ -1,0 +1,156 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.85]{geometry} % Reduce document margins
+%setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{\textcolor{color1}{Thomas}} % Your first name
+\familyname{\textcolor{color1}{Chauvet}} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+% \title{Curriculum Vitae}
+\address{Geneva, Switzerland}{}
+% \mobile{}
+\email{thomas.chauvet (at) icloud.com}
+\homepage{www.linkedin.com/in/thomaschauvet/}{}
+\extrainfo{\homepagesymbol\httplink{www.github.com/thomas-chauvet/}}% The first argument is %the url for the clickable link, the second argument is the url displayed in the %template - this allows special characters to be displayed such as the tilde in this %example
+%\extrainfo{additional information}
+%\photo[70pt][0.4pt]{picture} % The first bracket is the picture height, the second is %the thickness of the frame around the picture (0pt for no frame)
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+\vspace{-1.5cm}
+
+\begin{center}
+    \Large{\textbf{\textcolor{color1}{Artificial Intelligence Engineer}}} - 5 years of experience
+\end{center}
+
+\textcolor{color2}{Data enthusiast, my aim is to build data products relying on artificial intelligence to help solving real life issues. The most, would be if said product has a strong and good impact on justice and social change.}
+
+\vspace{0.4cm}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\cventry{May 2019 \\--\\ Present}{Artificial Intelligence Engineer}{\textsc{International Committee of the Red Cross (ICRC)}}{Geneva, Switzerland}{}{
+\textit{Artificial Intelligence Engineer at ILEM Group (consulting company) in contract with ICRC.}
+\textit{Note that most of the project is confidential. Two engineers, including myself, in the tech-team.}
+\begin{itemize}
+    \item \textbf{Search engine on multiple distributed and segregated databases} with textual, image and date fields. Focus on search (date, text and image), data pipelines, streaming engine, back-end and industrialization of the product.
+    \item Product developed in \textit{Python}. APIs developed with \textit{FastAPI}. Use of \textit{ElasticSearch} search algorithms. Data pipelines based on \textit{Kafka} topics with \textit{Faust} streaming engine. Use of \textit{Kafka-connect} to pull and push data from/to \textit{Kafka} and \textit{Kafka-rest} in order to interact with topics with a \textit{REST} API.
+    \item Deploy \textit{Docker} containers (one per module) via \textit{Ansible}. Use of TFS to build \textbf{continuous integration pipelines} (unit testing, code analysis, report to \textit{SonarQube},  build \textit{Docker} images) and \textbf{continuous release pipelines} (deploy different versions on different IT environments thanks to \textit{Ansible}).
+\end{itemize}
+Technology stack: Python (\textit{Faust, FastAPI}), Elasticsearch, Kafka, Docker, Ansible.
+}
+
+\vspace{0.8cm}
+
+
+\cventry{Aug. 2017 \\--\\ March 2019}{Data Scientist / Data Engineer}{\textsc{Bleckwen} Fintech start-up}{Paris, France}{}{
+\begin{itemize}
+    \item R\&D project for 6 months on \textbf{temporal graph and text mining} to fight fraud. Use of graph mining to extract patterns and find anomalies in transactions network.\break
+    Use of \textbf{Natural Language Processing (NLP)} to summarize text and find relevant patterns.\break
+    Project built with \textit{Python} (\textit{Scikit-Learn}, \textit{Keras}, \textit{Pandas} for machine learning and exploration) and \textit{R}/\textit{Shiny} to communicate results with stakeholders with a web application.\break
+    Presentation of \textit{LSTM} (neural network method) for NLP application based on a Kaggle dataset (slides on my \textit{GitHub}).
+    \item Development of an anti-fraud product for banks. \textbf{Streaming machine learning} engine to score transactions (transfers, cards payments, credits) with high latency constraints (100ms to give a score with a throughput of 10'000 messages/second).\break
+    Main responsibility on engine module. Read data from \textit{Kafka} and processed them with \textit{Flink}.\break
+    Data pipeline in 3 steps: integrating data in the data model, feature engineering and transactions scoring with a machine learning model (\textit{Xgboost}). Add (hot) machine learning model deployment and machine learning interpretability in the streaming engine. Collaboration on the data storage and KPIs creation to monitor and store results from the engine.\break
+    Product built in \textit{Scala} and deployed with \textit{Docker} (\textit{docker-compose}).
+\end{itemize}
+Technology stack: Python (\textit{Pandas, scikit-learn, Keras}), Kafka, Flink, Docker.
+}
+
+\cventry{Feb. 2015\\--\\Jul. 2017}{Data Scientist}{\textsc{Deepki} Energy Efficiency start-up}{Paris, France}{}{
+\begin{itemize}
+    \item Data collection, cleaning and consolidation from different sources (invoices, telemetry, patrimonial data, activity).
+    Use of Machine learning to understand buildings consumption thanks to unsupervised learning (clustering). Use of supervised learning to \textbf{predict consumption}, to detect anomalies, and to simulate renovation impact. Use of load curves (instant power every 10 minutes) to \textbf{detect anomalies} at a day level thanks to an hybrid method based on \textit{Isolation Forest} and \textit{One-class SVM}.
+    \item First employee to work on the product creation. Software as a Service (SaaS) product built in \textit{Shiny} as a Web application to visualize, understand, find patterns in energy data and manage recommendations and alerts.
+    \item Supervision of two engineering school student projects.
+\end{itemize}
+Technology stack: Python (\textit{scikit-learn, Pandas, Flask}), R (\textit{tidyverse: dplyr, tidyr, ggplot2, Shiny}).
+}
+
+\vspace{0.7cm}
+
+%\cventry{Jul. -- Sept. 2014}{Data Scientist Intern}{\textsc{French National %Public Health Agency - formerly InVS} Montpellier, France}{}{}{The aim of %the internship was the early detection of aberration like epidemic %outbreak, bacteriological attack, etc. on time series data.
+%\begin{itemize}
+%\item  Analyze and implement methods to detect unusual events based on %CUSUM (CUmulative SUM) and its variation on real time series data in %\textit{R}. Selection of the most relevant methods and combination to %increase the reliability of the warning system, 
+%\item Development of an interactive tool in \textit{Shiny} to visualize %epidemiological time series and manage alerts (detection of epidemic %peaks). Users were epidemiologists.
+%\end{itemize}
+%}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\cventry{2012 -- 2015}{INSA}{Toulouse, France}{French Graduate Engineering School}{}{Engineering degree (M.Sc.) in computational and mathematical engineering, specialization in statistical methods and models option Data Science.}  % Arguments not required can be left empty
+
+\cventry{2009 -- 2012}{INSA}{Lyon, France}{}{}{Intensive undergraduate-level preparation in advanced Science (Mathematics, Physics, Mechanics, Chemistry).}
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Computer skills}
+
+\cvitem{Languages}{Python, R, Scala}
+\cvitem{Libraries}{Scikit-Learn (machine learning), Keras (deep learning), Pandas (data wrangling/manipulation), Shiny (web application in R), tidyverse (colection of R packages for data science), FastAPI (asynchronous Python API - REST - GraphQL)}
+\cvitem{Frameworks}{Kafka ecosystem (distributed stream-processing software platform), Faust (python streaming engine), Elasticsearch}
+\cvitem{Tools}{Git, Docker, Ansible}
+
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Languages}
+\cvitem{}{
+Native \textbf{French} speaker.
+Fluent in \textbf{English} (TOEIC: 900).
+Basic \textbf{Spanish}.
+}
+
+\end{document}
