@@ -9,5 +9,5 @@ then
 else
 	# run in a "classic" terminal 
 	docker build -t cv_latex .
-	docker run --rm -i -v $(pwd)/cv:/cv cv_latex
+	docker run --rm -i -v $(pwd)/cv:cv cv_latex
 fi

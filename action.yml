@@ -1,6 +1,10 @@
 # action.yml
 name: 'LaTeX to PDF'
 description: 'Compile CV in LaTeX'
+inputs:
+  output_dir:
+    description: "Output directory for the cv.pdf file."
+    default: "/github/workspace"
 runs:
   using: 'docker'
   image: 'Dockerfile'

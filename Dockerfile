@@ -1,7 +1,11 @@
 FROM blang/latex:ubuntu
 
-COPY . /data/
+WORKDIR /
+
+COPY . /
 
 COPY entrypoint.sh /entrypoint.sh
+
+ENV OUTPUT_DIR="cv"
 
 ENTRYPOINT ["/entrypoint.sh"]
