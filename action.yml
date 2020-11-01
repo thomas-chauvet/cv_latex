@@ -1,0 +1,6 @@
+# action.yml
+name: 'LaTeX to PDF'
+description: 'Compile CV in LaTeX'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

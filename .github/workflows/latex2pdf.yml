@@ -13,9 +13,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile LaTeX document
-        runs:
-          using: 'docker'
-          image: 'Dockerfile'
+        uses: ./
       - name: Upload PDF file to the workflow tab
         uses: actions/upload-artifact@v2
         with:
