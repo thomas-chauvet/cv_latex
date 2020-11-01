@@ -10,15 +10,17 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  pdf2latex:
+  build_latex:
     runs-on: ubuntu-latest
-    name: Convert LateX CV in PDF
-    container: 
-      image: blang/latex:ubuntu
-      env:
-        MAIN_LATEX_FILE: "cv.tex"
-        OUTPUT_DIR: "cv"
-    steps:  
-    - uses: actions/checkout@v2
-    - name: What OS is running
-      run: pdflatex -output-directory $OUTPUT_DIR $MAIN_LATEX_FILE
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: cv.tex
+      - name: Upload PDF file to the workflow tab
+        uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: cv.pdf
