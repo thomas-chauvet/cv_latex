@@ -1,18 +1,13 @@
 #!/bin/sh
-IMAGE=blang/latex:ubuntu
-
-MAIN_LATEX_FILE="cv.tex"
-OUTPUT_DIR="cv"
-
-mkdir -p $OUTPUT_DIR
-
-COMMAND="pdflatex -output-directory $OUTPUT_DIR $MAIN_LATEX_FILE"
 
 if [[ `uname -s` == MINGW* ]];
 then
 	# if run on gitbash for Windows
-    exec docker run --rm -i --net=none -v "`pwd | sed -E 's/^\/(.)\//\1:\//'`":/data "$IMAGE" $COMMAND
+	dos2unix entrypoint.sh
+	docker build -t cv_latex .
+	docker run --rm -i -v "`pwd | sed -E 's/^\/(.)\//\1:\//'`"/cv:/cv cv_latex
 else
 	# run in a "classic" terminal 
-    exec docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/data "$IMAGE" $COMMAND
+	docker build -t cv_latex .
+	docker run --rm -i -v $(pwd)/cv:/cv cv_latex
 fi
