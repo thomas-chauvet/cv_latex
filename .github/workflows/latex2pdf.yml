@@ -19,6 +19,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: cv.tex
+          latexmk_use_lualatex: true
       - name: Upload PDF file to the workflow tab
         uses: actions/upload-artifact@v2
         with:
