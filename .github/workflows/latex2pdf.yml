@@ -18,6 +18,9 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
+          pre_compile: |
+            initexmf --mkmaps
+            initexmf --update-fndb
           root_file: cv.tex
           latexmk_use_lualatex: true
       - name: Upload PDF file to the workflow tab
