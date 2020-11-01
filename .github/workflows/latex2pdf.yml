@@ -2,7 +2,9 @@ name: LateX CV to PDF
 
 on:
   push:
-    branches: [ master ]
+    branches: 
+      - master
+      - develop
   pull_request:
     branches: [ master ]
 
@@ -13,9 +15,22 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile LaTeX document
+        id: compile-latex-document
         uses: ./
-      - name: Upload PDF file to the workflow tab
+      - name: Upload CV in PDF to the workflow tab
+        id: upload-workflow-tab
         uses: actions/upload-artifact@v2
         with:
-          name: PDF
+          name: cv
           path: cv/cv.pdf
+      - name: Upload Release CV
+        id: upload-release-asset
+        if: {{ github.ref == 'ref/head/master' }}
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: cv/cv.pdf
+          asset_name: cv.pdf
+          asset_content_type: application/pdf
