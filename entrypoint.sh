@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-MAIN_LATEX_FILE="cv.tex"
+MAIN_LATEX_FILE="$MAIN_LATEX_FILE"
 
 OUTPUT_DIR="$OUTPUT_DIR"
 
