@@ -2,8 +2,8 @@ name: 'LaTeX to PDF'
 description: 'Compile CV in LaTeX'
 inputs:
   main_latex_file: 
-    description: "Main latex file to convert in PDF (for intance `cv.txt`)."
-    default: "cv.text"
+    description: "Main latex file to convert in PDF (for intance `cv.tex`)."
+    default: "cv.tex"
     required: true
   output_dir:
     description: "Output directory for the cv.pdf file."
@@ -12,7 +12,7 @@ inputs:
     description: >-
       "Extra package from CTAN to install.
       List of packages available [here](http://mirror.ctan.org/systems/texlive/tlnet/archive). 
-      Each package must be separated by a space."
+      Each package must be separated by a space (ex: "moderncv xargs")."
 runs:
   using: 'docker'
   image: 'Dockerfile'

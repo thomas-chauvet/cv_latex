@@ -1,19 +1,19 @@
-FROM blang/latex:ubuntu
+FROM ubuntu:bionic
+
+WORKDIR /var/local
+
+# combine into one run command to reduce image size
+RUN apt-get update && apt-get install -y perl wget libfontconfig1 && \
+    wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh  && \
+    apt-get clean
+ENV PATH="${PATH}:/root/bin"
+
+ENV EXTRA_CTAN_PACKAGES=""
+ENV OUTPUT_DIR="output"
+ENV MAIN_LATEX_FILE="main.tex"
 
 WORKDIR /
 
 COPY . /
-
-COPY entrypoint.sh /entrypoint.sh
-
-ENV OUTPUT_DIR="cv"
-
-ENV MAIN_LATEX_FILE="cv.tex"
-
-ENV EXTRA_CTAN_PACKAGES=""
-
-RUN tlmgr init-usertree
-
-RUN for package in EXTRA_CTAN_PACKAGES; do tlmgr install "$package"; done 
 
 ENTRYPOINT ["/entrypoint.sh"]
