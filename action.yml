@@ -3,7 +3,7 @@ description: 'Compile CV in LaTeX'
 inputs:
   main_latex_file: 
     description: "Main latex file to convert in PDF (for intance `cv.tex`)."
-    default: "cv.tex"
+    default: "main.tex"
     required: true
   output_dir:
     description: "Output directory for the cv.pdf file."
