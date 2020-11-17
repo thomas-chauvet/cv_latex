@@ -8,7 +8,7 @@ inputs:
   output_dir:
     description: "Output directory for the cv.pdf file."
     default: "/github/workspace"
-  extra_ctan_packages:
+  ctan_packages:
     description: >-
       "Extra package from CTAN to install.
       List of packages available [here](http://mirror.ctan.org/systems/texlive/tlnet/archive). 
