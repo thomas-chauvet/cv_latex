@@ -20,6 +20,7 @@ jobs:
         id: compile-latex-document
         uses: ./
         with:
+          output_dir: cv
           main_latex_file: cv.tex
           ctan_packages: moderncv xargs bigfoot colortbl pgf fontawesome
       - name: Upload CV in PDF to the workflow tab

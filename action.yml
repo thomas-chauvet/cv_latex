@@ -1,6 +1,10 @@
 name: 'LaTeX to PDF'
 description: 'Compile CV in LaTeX'
 inputs:
+  output_dir:
+    description: "Output directory to store the pdf file."
+    required: true
+    default: ""
   main_latex_file: 
     description: "Main latex file to convert in PDF (for intance `cv.tex`)."
     default: "main.tex"
@@ -14,6 +18,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    OUTPUT_DIR: "/github/workspace"
+    OUTPUT_DIR: ${{ inputs.output_dir }}
     MAIN_LATEX_FILE: ${{ inputs.main_latex_file }}
     CTAN_PACKAGES: ${{ inputs.ctan_packages }}
