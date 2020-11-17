@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -y perl wget libfontconfig1 && \
     apt-get clean
 ENV PATH="${PATH}:/root/bin"
 
-ENV EXTRA_CTAN_PACKAGES=""
-ENV OUTPUT_DIR="output"
-ENV MAIN_LATEX_FILE="main.tex"
+ENV INPUT_CTAN_PACKAGES=""
+ENV INPUT_OUTPUT_DIR="output"
+ENV INPUT_MAIN_LATEX_FILE="main.tex"
 
 WORKDIR /
 

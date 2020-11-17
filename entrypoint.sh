@@ -2,19 +2,15 @@
 
 tlmgr install xetex
 
-if [ -z "$EXTRA_CTAN_PACKAGES" ] ; then
+if [ -z "$INPUT_EXTRA_CTAN_PACKAGES" ] ; then
 	echo No package to install;
 else
-	tlmgr install $EXTRA_CTAN_PACKAGES;
+	tlmgr install $INPUT_EXTRA_CTAN_PACKAGES;
 fi
 
-MAIN_LATEX_FILE="$MAIN_LATEX_FILE"
+mkdir -p $INPUT_OUTPUT_DIR
 
-OUTPUT_DIR="$OUTPUT_DIR"
-
-mkdir -p $OUTPUT_DIR
-
-lualatex -output-directory $OUTPUT_DIR $MAIN_LATEX_FILE
+lualatex -output-directory $INPUT_OUTPUT_DIR $INPUT_MAIN_LATEX_FILE
 
 echo $GITHUB_REPOSITORY 
 
