@@ -14,6 +14,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    - OUTPUT_DIR: "/github/workspace"
-    - MAIN_LATEX_FILE: ${{ inputs.main_latex_file }}
-    - CTAN_PACKAGES: ${{ inputs.ctan_packages }}
+    OUTPUT_DIR: "/github/workspace"
+    MAIN_LATEX_FILE: ${{ inputs.main_latex_file }}
+    CTAN_PACKAGES: ${{ inputs.ctan_packages }}
