@@ -1,9 +1,5 @@
-# LaTeX CV
+# LaTeX CV available in PDF -> Check the link in the "About" section of this repository
 
-![LateX CV to PDF](https://github.com/thomas-chauvet/cv_latex/workflows/LateX%20CV%20to%20PDF/badge.svg?branch=master)
+# GitHub action
 
-### Generate PDF file locally
-
-```bash
-./make_pdf.sh
-```
+The github action used to convert LaTeX document into PDF can be found in the GitHub [marketplace](https://github.com/marketplace/actions/latex2pdf).
