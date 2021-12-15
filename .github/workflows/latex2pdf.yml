@@ -22,7 +22,7 @@ jobs:
         with:
           output_dir: cv
           main_latex_file: cv.tex
-          ctan_packages: moderncv xargs bigfoot colortbl pgf fontawesome
+          ctan_packages: moderncv academicons arydshln luatexbase multirow fontawesome5 xargs bigfoot colortbl pgf
       - name: Upload CV in PDF to the workflow tab
         id: upload-workflow-tab
         uses: actions/upload-artifact@v2
