@@ -1,4 +1,5 @@
 cv/
+*.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
