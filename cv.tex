@@ -20,24 +20,28 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+% PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
 \documentclass[12pt,a4paper,sans]{moderncv}
 
-\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+% Added font packages to provide more font shapes/sizes and reduce substitution warnings
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 
 \usepackage[scale=0.90]{geometry}
 
 %----------------------------------------------------------------------------------------
-%	NAME AND CONTACT INFORMATION SECTION
+% NAME AND CONTACT INFORMATION SECTION
 %----------------------------------------------------------------------------------------
 
 \firstname{\textcolor{color1}{Thomas}}
 \familyname{\textcolor{color1}{Chauvet}}
 
-\address{Geneva, Switzerland}{}{}
+\address{Geneva, Switzerland}{C permit}{}
 \homepage{thomas.chauvet@protonmail.com}
 \social[linkedin]{www.linkedin.com/in/thomaschauvet/}{}
 \social[github]{www.github.com/thomas-chauvet/}
@@ -46,125 +50,124 @@
 
 \begin{document}
 
-\makecvtitle % Print the CV title
+\makecvtitle
 
 \vspace{-1.0cm}
 
 \begin{center}
-    \Large{\textbf{\textcolor{color1}{Lead Data Engineer / Scientist}}} - 9 years of experience
+    \Large{\textbf{\textcolor{color1}{Senior Data Engineer}}} - 10+ years experience
 \end{center}
 
-\textcolor{color2}{Data enthusiast, my aim is to build data products to have a positive impact.}
+\textcolor{color2}{Senior Data Engineer with end-to-end expertise in streaming and batch data platforms, ML data pipelines, and production-grade search systems. Focus on building reliable, observable, cost-conscious data products that enable analytics, decision support and product features.}
+
+\vspace{0.3cm}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\cventry{Jan. 2024 \\--\\ Present}{Senior Data Engineer}{\textsc{Dyneo} (Thermal network optimization startup)}{Geneva, Switzerland}{}{
+    \begin{itemize}
+        \item Architecting end-to-end data platform (Kubernetes, Airflow on k8s, PostgreSQL, S3-compatible object storage) enabling AI for district heating \& cooling (DHC) networks.
+        \item Implemented Delta Lake based lakehouse with multi-engine access (DuckDB, Polars) and a lightweight DuckDB-backed data catalog.
+        \item Built and optimized batch data pipelines (Python / SQL) for large-scale ingestion, cleansing, transformation and feature preparation.
+        \item Established observability, data quality and performance practices to ensure availability, scalability and cost efficiency.
+        \item Automated infrastructure and deployment workflows (Terraform, GitHub Actions) for reproducible environments and rapid iteration.
+    \end{itemize}
+    \textit{Stack:} Python, SQL, Delta Lake, DuckDB, Polars, Airflow, Kubernetes, PostgreSQL, S3, Terraform, GitHub Actions
+}
+
+\vspace{0.2cm}
+\cventry{Jun. 2022 \\--\\ Dec. 2023}{Senior Data Engineer}{\textsc{E-nno} (Energy efficiency startup)}{Geneva, Switzerland}{}{
+    \begin{itemize}
+        \item Owned architecture and delivery of the full data platform (streaming + batch) powering energy analytics products.
+        \item Built a Kafka / Kafka-Connect / Faust streaming layer ingesting IoT telemetry for real-time processing and enrichment.
+        \item Implemented Airflow-orchestrated batch pipelines (Kubernetes) for aggregation, feature computation and data quality checks.
+        \item Introduced CI/CD (GitHub Actions) for data workflows and Python packaging; improved reliability and deploy consistency.
+        \item Partnered with analytics stakeholders to scope datasets and accelerate dashboard iteration.
+    \end{itemize}
+    \textit{Stack:} Python, Kafka, PostgreSQL, Airflow, Kubernetes, GitHub Actions
+}
 
 \vspace{0.2cm}
 
-%----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
-
-\section{Experiences}
-
-\cventry{June 2022 \\--\\ December 2023}{Lead Data Engineer}{\textsc{E-nno} Energy efficiency startup}{Geneva, Switzerland}{}{
+\cventry{Sep. 2021 \\--\\ May 2022}{Senior Machine Learning Engineer}{\textsc{Rocket Software}}{Geneva, Switzerland}{}{
     \begin{itemize}
-        \item \textbf{Design, build and maintain data stack:}
-              \begin{itemize}
-                  \item \textbf{Streaming engine} to collect and process data (telemetry from IoT devices) with \textit{Kafka}, \textit{Kafka-Connect} and \textit{Faust} (Python streaming engine),
-                  \item Batch data pipelines orchestrated with Airflow on Kubernetes,
-              \end{itemize}
-        \item Collaborate on analytics and dashboard tools.
+        \item Led delivery of a time-series forecasting platform from discovery to on-premise deployment.
+        \item Gathered / refined business requirements and translated them into model, data and deployment design.
+        \item Evaluated multiple ML approaches; standardized experiment tracking with MLflow.
+        \item Engineered robust extraction / transformation pipelines and packaging for secure offline installation.
     \end{itemize}
-    Technology stack: Python, Kafka, PostgreSQL, Airflow, Kubernetes, Github-actions
+    \textit{Stack:} Python, Elasticsearch, MLflow, Docker, Jenkins
 }
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
-\cventry{September 2021 \\--\\ May 2022}{Lead Machine Learning Engineer}{\textsc{Rocket software}}{Geneva, Switzerland}{}{
+\cventry{May 2019 \\--\\ Jul. 2021}{Artificial Intelligence Engineer}{\textsc{International Committee of the Red Cross (ICRC)}}{Geneva, Switzerland}{}{
+    \textit{Consultant via ILEM Group. Small 2-engineer core team.}
     \begin{itemize}
-        \item \textbf{Design and build a machine learning project for time series forecasting}
-        \item Analyze and understand business needs,
-        \item Explore and iterate on different machine learning models,
-        \item Build the full data pipeline to extract, transform and load data needed for the ML model. Package everything for on-premise deployment.
+        \item Designed and implemented a distributed search platform (text + image) over segregated data sources.
+        \item Developed ingestion, streaming (Faust + Kafka) and indexing pipelines plus backend (FastAPI) services.
+        \item Drove iterative architecture with stakeholders; ensured compliance and controlled data exposure.
     \end{itemize}
-    Technology stack: Python, ElasticSearch, MLflow, Docker, Jenkins
+    \textit{Stack:} Python (Faust, FastAPI), Elasticsearch, Kafka, Docker, Ansible
 }
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
-\cventry{May 2019 \\--\\ July 2021}{Artificial Intelligence Engineer}{\textsc{International Committee of the Red Cross (ICRC)}}{Geneva, Switzerland}{}{
-    \textit{Artificial Intelligence Engineer at ILEM Group in contract with ICRC.}
-    \textit{Most of the project is confidential. Two engineers, including myself, in the tech-team.}
+\cventry{Aug. 2017 \\--\\ Mar. 2019}{Data Scientist / Engineer}{\textsc{Bleckwen} (FinTech startup)}{Paris, France}{}{
     \begin{itemize}
-        \item Development of a \textbf{search engine on distributed and segregated databases} with textual and image fields from scratch.
-              Focus on search, data pipelines, streaming engine, back-end and industrialization of the product.
-        \item Strong collaboration with the business to understand the need and translate it in technical architecture/implementation.
+        \item Researched temporal graph + text mining techniques for fraud detection.
+        \item Co-built from scratch an anti-fraud streaming ML engine (Apache Flink + Kafka) scoring transactions under strict latency constraints.
+        \item Implemented hot model deployment and model explainability inside streaming pipeline.
     \end{itemize}
-    Technology stack: Python (\textit{Faust, FastAPI}), Elasticsearch, Kafka, Docker, Ansible.
+    \textit{Stack:} Python (Pandas, scikit-learn, Keras), Scala, Kafka, Flink, Docker
 }
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
-\cventry{Aug. 2017 \\--\\ March 2019}{Data Scientist / Engineer}{\textsc{Bleckwen} Fintech startup}{Paris, France}{}{
+\cventry{Feb. 2015 \\--\\ Jul. 2017}{Data Scientist}{\textsc{Deepki} (Energy efficiency startup)}{Paris, France}{}{
     \begin{itemize}
-        \item R\&D on \textbf{temporal graph and text mining} to fight fraud. Use of graph mining to extract patterns and find anomalies in transactions network.
-        \item Development of an anti-fraud product for banks from scratch. \textbf{Streaming machine learning} engine to score transactions with high latency constraints.
-              Main responsibility on engine module developed with \textit{Flink} to collect, process and score transactions.
-              Add (hot) machine learning model deployment and machine learning interpretability in the streaming engine.
+        \item Collected, normalized and unified heterogeneous data (invoices, telemetry, asset and activity data).
+        \item Applied clustering and supervised learning for consumption modeling, anomaly detection and renovation impact simulation.
+        \item Early employee contributing to SaaS platform foundations (data model, analytics features, recommendation / alert logic).
+        \item Mentored student projects and interns.
     \end{itemize}
-    Technology stack: Python (\textit{Pandas, scikit-learn, Keras}), Scala, Kafka, Flink, Docker.
+    \textit{Stack:} Python (scikit-learn, Pandas, Flask), R (tidyverse: dplyr, tidyr, ggplot2, Shiny)
 }
-
-\vspace{0.3cm}
-
-\cventry{Feb. 2015\\--\\Jul. 2017}{Data Scientist}{\textsc{Deepki} Energy Efficiency startup}{Paris, France}{}{
-    \begin{itemize}
-        \item Data collection, cleaning and consolidation from different sources (invoices, telemetry, patrimonial data, activity).
-              Use of Machine learning to understand buildings consumption thanks to clustering.
-              Use of supervised learning to \textbf{predict consumption}, to \textbf{detect anomalies}, and to simulate renovation impact.
-        \item First employee to work on the product creation. Software as a Service (SaaS) to visualize, understand, find patterns in energy data and manage recommendations and alerts.
-        \item Supervision of two engineering school student projects and interns.
-    \end{itemize}
-    Technology stack: Python (\textit{scikit-learn, Pandas, Flask}), R (\textit{tidyverse: dplyr, tidyr, ggplot2, Shiny}).
-}
-
-%\cventry{Jul. -- Sept. 2014}{Data Scientist Intern}{\textsc{French National %Public Health Agency - formerly InVS} Montpellier, France}{}{}{The aim of %the internship was the early detection of aberration like epidemic %outbreak, bacteriological attack, etc. on time series data.
-%\begin{itemize}
-%\item  Analyze and implement methods to detect unusual events based on %CUSUM (CUmulative SUM) and its variation on real time series data in %\textit{R}. Selection of the most relevant methods and combination to %increase the reliability of the warning system, 
-%\item Development of an interactive tool in \textit{Shiny} to visualize %epidemiological time series and manage alerts (detection of epidemic %peaks). Users were epidemiologists.
-%\end{itemize}
-%}
 
 %----------------------------------------------------------------------------------------
-%	COMPUTER SKILLS SECTION
+% SKILLS SECTION
 %----------------------------------------------------------------------------------------
 
-\section{Computer skills}
+\section{Technical Skills}
 
-\cvitem{Languages}{Python, R, Scala}
-\cvitem{Storage}{PostgreSQL, TimescaleDB, Elasticsearch, Kafka}
-\cvitem{Processing}{DuckDB, Kafka ecosystem, Faust (python streaming engine), Flink}
-\cvitem{Orchestrator}{Airflow}
-\cvitem{Dashboard}{Kibana, Grafana}
-\cvitem{Tools}{Git, Docker, Kubernetes, Github-action}
-\cvitem{Others}{Scikit-learn, FastAPI, Typer, Pydantic, Dynaconf, MLflow, Pandas, Polars}
+\cvitem{Programming}{Python, SQL, Bash}
+\cvitem{Streaming}{Kafka ecosystem, Faust, Flink}
+\cvitem{Batch / Query}{DuckDB, Pandas, Polars}
+\cvitem{Storage / Index}{PostgreSQL, TimescaleDB, Elasticsearch}
+\cvitem{Orchestration}{Airflow}
+\cvitem{Infra / Ops}{Docker, Kubernetes, Git, GitHub Actions}
+\cvitem{ML / Data}{scikit-learn, MLflow, FastAPI, Pydantic, Typer, Dynaconf, Delta Lake}
+\cvitem{Monitoring}{Grafana, Prometheus}
 
 %----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
+% EDUCATION SECTION
 %----------------------------------------------------------------------------------------
 
 \section{Education}
 
-\cventry{2012 -- 2015}{INSA}{Toulouse, France}{French Graduate Engineering School}{}{Engineering degree (M.Sc.) in computational and mathematical engineering, specialization in statistical methods and models option Data Science.}  % Arguments not required can be left empty
+\cventry{2012 -- 2015}{INSA Toulouse}{Toulouse, France}{French Graduate Engineering School}{}{Engineering degree (M.Sc.) in computational and mathematical engineering; specialization in statistical methods and data science.}
 
-\cventry{2009 -- 2012}{INSA}{Lyon, France}{}{}{Intensive undergraduate-level preparation in advanced Science (Mathematics, Physics, Mechanics, Chemistry).}
+\cventry{2009 -- 2012}{INSA Lyon}{Lyon, France}{}{}{Intensive preparatory cycle in Mathematics, Physics, Mechanics, Chemistry.}
 
 %----------------------------------------------------------------------------------------
-%	LANGUAGES SECTION
+% LANGUAGES SECTION
 %----------------------------------------------------------------------------------------
 
 \section{Languages}
-\cvitem{}{
-    Native \textbf{French} speaker.
-    Fluent in \textbf{English} (TOEIC: 900).
-}
+\cvitem{}{Native \textbf{French}. Fluent \textbf{English}}
 
 \end{document}
