@@ -12,11 +12,6 @@
 % License:
 % CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 %
-% Important note:
-% This template requires the moderncv.cls and .sty files to be in the same 
-% directory as this .tex file. These files provide the resume style and themes 
-% used for structuring the document.
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
@@ -33,6 +28,9 @@
 \usepackage{lmodern}
 
 \usepackage[scale=0.90]{geometry}
+
+\newcommand{\techstack}[1]{\textit{Stack:} #1}
+\newcommand{\entryspacing}{\vspace{0.2cm}}
 
 %----------------------------------------------------------------------------------------
 % NAME AND CONTACT INFORMATION SECTION
@@ -58,7 +56,7 @@
     \Large{\textbf{\textcolor{color1}{Senior Data Engineer}}} - 10+ years experience
 \end{center}
 
-\textcolor{color2}{Senior Data Engineer with end-to-end expertise in streaming and batch data platforms, ML data pipelines, and production-grade search systems. Focus on building reliable, observable, cost-conscious data products that enable analytics, decision support and product features.}
+\textcolor{color2}{Senior Data Engineer with 10+ years experience building end-to-end data platforms}
 
 \vspace{0.3cm}
 
@@ -70,63 +68,61 @@
 
 \cventry{Jan. 2024 \\--\\ Present}{Senior Data Engineer}{\textsc{Dyneo} (Thermal network optimization startup)}{Geneva, Switzerland}{}{
     \begin{itemize}
-        \item Architecting end-to-end data platform (Kubernetes, Airflow on k8s, PostgreSQL, S3-compatible object storage) enabling AI for district heating \& cooling (DHC) networks.
-        \item Implemented Delta Lake based lakehouse with multi-engine access (DuckDB, Polars) and a lightweight DuckDB-backed data catalog.
-        \item Built and optimized batch data pipelines (Python / SQL) for large-scale ingestion, cleansing, transformation and feature preparation.
-        \item Established observability, data quality and performance practices to ensure availability, scalability and cost efficiency.
-        \item Automated infrastructure and deployment workflows (Terraform, GitHub Actions) for reproducible environments and rapid iteration.
+        \item Architected and maintain complete data lakehouse platform (Delta Lake on S3-compatible storage) with multi-engine query support (DuckDB, Polars).
+        \item Built self-service capabilities enabling data consumers to access curated datasets through lightweight catalog and query interfaces.
+        \item Designed and deployed data ingestion pipelines with Airflow on Kubernetes for batch processing and transformation.
+        \item Implemented Infrastructure as Code (Terraform) for entire cloud stack; automated CI/CD pipelines (GitHub Actions) for deployments.
+        \item Established custom data quality framework (API and alerting) and observability (metrics, logging) ensuring reliability.
     \end{itemize}
-    \textit{Stack:} Python, SQL, Delta Lake, DuckDB, Polars, Airflow, Kubernetes, PostgreSQL, S3, Terraform, GitHub Actions
+    \techstack{Python, SQL, Delta Lake, Airflow, Kubernetes, DuckDB, Polars, PostgreSQL, S3, Terraform, GitHub Actions}
 }
 
-\vspace{0.2cm}
+\entryspacing
 \cventry{Jun. 2022 \\--\\ Dec. 2023}{Senior Data Engineer}{\textsc{E-nno} (Energy efficiency startup)}{Geneva, Switzerland}{}{
     \begin{itemize}
-        \item Owned architecture and delivery of the full data platform (streaming + batch) powering energy analytics products.
-        \item Built a Kafka / Kafka-Connect / Faust streaming layer ingesting IoT telemetry for real-time processing and enrichment.
-        \item Implemented Airflow-orchestrated batch pipelines (Kubernetes) for aggregation, feature computation and data quality checks.
-        \item Introduced CI/CD (GitHub Actions) for data workflows and Python packaging; improved reliability and deploy consistency.
-        \item Partnered with analytics stakeholders to scope datasets and accelerate dashboard iteration.
+        \item Designed and maintained entire data platform architecture combining streaming (Kafka ecosystem) and batch processing (Airflow on Kubernetes).
+        \item Built real-time data ingestion pipelines using Kafka, Kafka Connect, and Faust for IoT telemetry processing and enrichment.
+        \item Implemented high-performance PostgreSQL databases with optimized data models for analytics workloads and dashboard serving.
+        \item Established CI/CD pipelines (GitHub Actions) for platform components.
     \end{itemize}
-    \textit{Stack:} Python, Kafka, PostgreSQL, Airflow, Kubernetes, GitHub Actions
+    \techstack{Python, Kafka, Kakfa-Connect, Faust, PostgreSQL, Airflow, Kubernetes, GitHub Actions}
 }
 
-\vspace{0.2cm}
+\entryspacing
 
-\cventry{Sep. 2021 \\--\\ May 2022}{Senior Machine Learning Engineer}{\textsc{Rocket Software}}{Geneva, Switzerland}{}{
+\cventry{Sep. 2021 \\--\\ May 2022}{Machine Learning Engineer}{\textsc{Rocket Software}}{Geneva, Switzerland}{}{
     \begin{itemize}
         \item Led delivery of a time-series forecasting platform from discovery to on-premise deployment.
         \item Gathered / refined business requirements and translated them into model, data and deployment design.
         \item Evaluated multiple ML approaches; standardized experiment tracking with MLflow.
         \item Engineered robust extraction / transformation pipelines and packaging for secure offline installation.
     \end{itemize}
-    \textit{Stack:} Python, Elasticsearch, MLflow, Docker, Jenkins
+    \techstack{Python, Elasticsearch, MLflow, Docker, Jenkins}
 }
 
-\vspace{0.2cm}
+\entryspacing
 
 \cventry{May 2019 \\--\\ Jul. 2021}{Artificial Intelligence Engineer}{\textsc{International Committee of the Red Cross (ICRC)}}{Geneva, Switzerland}{}{
-    \textit{Consultant via ILEM Group. Small 2-engineer core team.}
     \begin{itemize}
-        \item Designed and implemented a distributed search platform (text + image) over segregated data sources.
-        \item Developed ingestion, streaming (Faust + Kafka) and indexing pipelines plus backend (FastAPI) services.
-        \item Drove iterative architecture with stakeholders; ensured compliance and controlled data exposure.
+        \item Architected distributed search and data platform over segregated sources with strict security and governance requirements.
+        \item Built complete data ingestion and streaming pipelines using Kafka and Faust; implemented Elasticsearch for high-performance querying.
+        \item Developed backend services (FastAPI) and automated deployments with Docker and Ansible ensuring compliance and data security.
     \end{itemize}
-    \textit{Stack:} Python (Faust, FastAPI), Elasticsearch, Kafka, Docker, Ansible
+    \techstack{Python (Faust, FastAPI), Kafka, Elasticsearch, Docker, Ansible}
 }
 
-\vspace{0.2cm}
+\entryspacing
 
 \cventry{Aug. 2017 \\--\\ Mar. 2019}{Data Scientist / Engineer}{\textsc{Bleckwen} (FinTech startup)}{Paris, France}{}{
     \begin{itemize}
-        \item Researched temporal graph + text mining techniques for fraud detection.
-        \item Co-built from scratch an anti-fraud streaming ML engine (Apache Flink + Kafka) scoring transactions under strict latency constraints.
-        \item Implemented hot model deployment and model explainability inside streaming pipeline.
+        \item Co-architected from scratch a real-time streaming platform using Apache Flink and Kafka for fraud detection at scale.
+        \item Designed and implemented streaming data pipelines (Scala/Flink) processing high-volume transactions with sub-second latency requirements.
+        \item Deployed containerized platform components (Docker) with hot model deployment capabilities in production streaming pipeline.
     \end{itemize}
-    \textit{Stack:} Python (Pandas, scikit-learn, Keras), Scala, Kafka, Flink, Docker
+    \techstack{Scala, Apache Flink, Kafka, Python (Pandas, scikit-learn), Docker}
 }
 
-\vspace{0.2cm}
+\entryspacing
 
 \cventry{Feb. 2015 \\--\\ Jul. 2017}{Data Scientist}{\textsc{Deepki} (Energy efficiency startup)}{Paris, France}{}{
     \begin{itemize}
@@ -135,7 +131,7 @@
         \item Early employee contributing to SaaS platform foundations (data model, analytics features, recommendation / alert logic).
         \item Mentored student projects and interns.
     \end{itemize}
-    \textit{Stack:} Python (scikit-learn, Pandas, Flask), R (tidyverse: dplyr, tidyr, ggplot2, Shiny)
+    \techstack{Python (scikit-learn, Pandas, Flask), R (tidyverse: dplyr, tidyr, ggplot2, Shiny)}
 }
 
 %----------------------------------------------------------------------------------------
@@ -144,14 +140,14 @@
 
 \section{Technical Skills}
 
-\cvitem{Programming}{Python, SQL, Bash}
-\cvitem{Streaming}{Kafka ecosystem, Faust, Flink}
-\cvitem{Batch / Query}{DuckDB, Pandas, Polars}
-\cvitem{Storage / Index}{PostgreSQL, TimescaleDB, Elasticsearch}
+\cvitem{Programming}{Python, SQL, Bash, R, Scala}
+\cvitem{Streaming}{Kafka, Kafka-Connect, Flink, Faust, Bytewax}
+\cvitem{Processing}{SQL, DuckDB, Polars, Pandas}
 \cvitem{Orchestration}{Airflow}
-\cvitem{Infra / Ops}{Docker, Kubernetes, Git, GitHub Actions}
-\cvitem{ML / Data}{scikit-learn, MLflow, FastAPI, Pydantic, Typer, Dynaconf, Delta Lake}
-\cvitem{Monitoring}{Grafana, Prometheus}
+\cvitem{Databases}{PostgreSQL, TimescaleDB, Elasticsearch}
+\cvitem{Infrastructure}{Docker, Kubernetes, Terraform (IaC), GitHub Actions}
+\cvitem{Monitoring}{Prometheus, alertmanager}
+\cvitem{Dashboarding}{Grafana}
 
 %----------------------------------------------------------------------------------------
 % EDUCATION SECTION

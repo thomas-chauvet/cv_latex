@@ -2,13 +2,12 @@ name: LateX CV to PDF
 
 on:
   push:
-    branches: 
+    branches:
       - main
-      - develop
     tags:
        - '*'
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build_latex:
@@ -20,22 +19,18 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: cv.tex
-          latexmk_use_lualatex: true
-      - name: Arrange output
-        run: |
-          mkdir -p cv
-          mv cv.pdf cv/cv.pdf
       - name: Upload CV in PDF to the workflow tab
         id: upload-workflow-tab
         uses: actions/upload-artifact@v4
         with:
           name: cv
-          path: cv/cv.pdf
+          path: build/cv.pdf
+          retention-days: 7
       - name: Release CV
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: cv/cv.pdf
+          files: build/cv.pdf
           name: Release ${{ github.ref_name }}
           draft: false
           prerelease: false
